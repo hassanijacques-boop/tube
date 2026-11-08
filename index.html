@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les Tube — toutes les vidéos pour réviser, du CP au BTS</title>
+<meta name="description" content="Cinq bibliothèques de vidéos pour réviser, du CP au BTS : école, collège, lycée, BTS Gestion de la PME, réseaux et sécurité. Classées à la main, zéro algorithme.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF6EC; --paper2:#F4ECDC; --ink:#16213C; --ink2:#46506B; --line:#E2D6BF; --card:#FFFDF8;
+  --ecole:#D9462F; --college:#2F4BD8; --lycee:#157F5F; --bts:#6D28D9; --res:#0E7490;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif;
+  background-image:radial-gradient(#00000008 1px,transparent 1px);background-size:22px 22px;line-height:1.55}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+.top{display:flex;align-items:center;gap:12px;padding:14px 22px;border-bottom:2px solid var(--ink);position:sticky;top:0;z-index:50;
+  background:rgba(251,246,236,.92);backdrop-filter:blur(10px)}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.02em}
+.brand .mark{width:34px;height:34px;border:2px solid var(--ink);border-radius:9px;display:grid;place-items:center;background:var(--ink);color:var(--paper);
+  font-size:16px;box-shadow:2px 2px 0 var(--ecole)}
+.brand small{display:block;font-family:Inter,sans-serif;font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.spacer{flex:1}
+.famille{font-size:12.5px;color:var(--ink2);font-weight:600}
+
+header.hero{max-width:1100px;margin:0 auto;padding:58px 22px 10px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);padding:6px 13px;border-radius:999px}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(36px,6.2vw,70px);line-height:.98;letter-spacing:-.045em;margin:20px 0 0;font-weight:800;max-width:16ch}
+h1 em{font-style:normal;color:var(--ecole);
+  background-image:linear-gradient(180deg,transparent 58%,rgba(242,183,5,.55) 58%,rgba(242,183,5,.55) 88%,transparent 88%)}
+p.lead{font-size:17.5px;max-width:58ch;color:var(--ink2);margin:20px 0 0}
+.hand{font-family:Caveat,cursive;font-size:23px;color:var(--college);transform:rotate(-2deg);display:inline-block;margin-top:16px}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.stat{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:10px 16px;box-shadow:3px 3px 0 var(--ink)}
+.stat b{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;letter-spacing:-.03em;display:block;line-height:1}
+.stat span{font-size:11.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink2);font-weight:600}
+
+main{max-width:1100px;margin:0 auto;padding:34px 22px 70px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}
+.tile{position:relative;display:flex;flex-direction:column;background:var(--card);border:2.5px solid var(--ink);border-radius:18px;
+  overflow:hidden;box-shadow:5px 5px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.tile:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink)}
+.tile .band{height:10px;background:var(--c)}
+.tile .in{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.tile .head{display:flex;align-items:center;gap:12px}
+.tile .ico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:23px;background:var(--c);border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink)}
+.tile h2{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;margin:0;letter-spacing:-.025em;line-height:1.05}
+.tile .niv{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
+.tile p{margin:0;font-size:14px;color:var(--ink2)}
+.tile .foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--line)}
+.tile .nb{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px}
+.tile .nb span{font-family:Inter,sans-serif;font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink2)}
+.tile .go{font-weight:700;font-size:13.5px;border:2px solid var(--ink);border-radius:999px;padding:6px 14px;background:var(--card)}
+.tile:hover .go{background:var(--ink);color:var(--paper)}
+
+.note{margin-top:34px;border:2px solid var(--ink);border-radius:16px;background:var(--paper2);padding:18px 22px;box-shadow:4px 4px 0 var(--ink)}
+.note b{font-family:'Bricolage Grotesque',sans-serif;font-size:17px;letter-spacing:-.01em}
+.note p{margin:6px 0 0;font-size:14px;color:var(--ink2)}
+
+footer{max-width:1100px;margin:0 auto;padding:26px 22px 46px;color:var(--ink2);font-size:12.5px;border-top:2px solid var(--ink)}
+@media(max-width:640px){
+  h1{font-size:40px}
+  .grid{grid-template-columns:1fr}
+  .famille{display:none}
+}
+@media print{ .top,.go{display:none} .tile{box-shadow:none;break-inside:avoid} }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="brand"><span class="mark">T</span><span>LES TUBE<small>du CP au BTS</small></span></div>
+  <div class="spacer"></div>
+  <div class="famille">5 sites · 1 seule règle : classer à la main</div>
+</div>
+
+<header class="hero">
+  <div class="kicker">🎒 Les cinq étages du parcours scolaire</div>
+  <h1>Une seule adresse. <em>Cinq niveaux.</em></h1>
+  <p class="lead">Chaque étage est une bibliothèque de vidéos pour réviser : une notion, une vidéo, rangée à sa place. Pas de fil de recommandation, pas de Shorts qui défilent, pas de « tu pourrais aussi aimer ».</p>
+  <div class="hand">→ chacun clique sur son étage, et sait exactement où il en est.</div>
+  <div class="stats">
+    <div class="stat"><b>946</b><span>vidéos vérifiées</span></div>
+    <div class="stat"><b>5</b><span>niveaux</span></div>
+    <div class="stat"><b>0</b><span>algorithme</span></div>
+  </div>
+</header>
+
+<main>
+  <div class="grid">
+
+    <a class="tile" href="https://hassanijacques-boop.github.io/ecoletube/" style="--c:var(--ecole)">
+      <div class="band"></div>
+      <div class="in">
+        <div class="head"><div class="ico">🎒</div><div><div class="niv">Cycle 2 &amp; 3</div><h2>École</h2></div></div>
+        <p>Lecture, maths, questionner le monde. L'année où tout se joue sur la régularité, pas sur la quantité.</p>
+        <div class="foot"><div class="nb">273 <span>vidéos</span></div><div class="go">CP → CM2</div></div>
+      </div>
+    </a>
+
+    <a class="tile" href="https://hassanijacques-boop.github.io/college-tube/" style="--c:var(--college)">
+      <div class="band"></div>
+      <div class="in">
+        <div class="head"><div class="ico">🏫</div><div><div class="niv">Cycle 3 &amp; 4</div><h2>Collège</h2></div></div>
+        <p>Français, maths, SVT, physique-chimie, technologie, histoire-géo. On apprend à lire plus long et à écrire plus structuré.</p>
+        <div class="foot"><div class="nb">264 <span>vidéos</span></div><div class="go">6e → 3e</div></div>
+      </div>
+    </a>
+
+    <a class="tile" href="https://hassanijacques-boop.github.io/lycee-tube/" style="--c:var(--lycee)">
+      <div class="band"></div>
+      <div class="in">
+        <div class="head"><div class="ico">🎓</div><div><div class="niv">Général &amp; techno</div><h2>Lycée</h2></div></div>
+        <p>Le pack français des épreuves anticipées, les spécialités, la philosophie, le Grand oral — et les six séries technologiques.</p>
+        <div class="foot"><div class="nb">189 <span>vidéos</span></div><div class="go">2de → Tle</div></div>
+      </div>
+    </a>
+
+    <a class="tile" href="https://hassanijacques-boop.github.io/bts-tube/" style="--c:var(--bts)">
+      <div class="band"></div>
+      <div class="in">
+        <div class="head"><div class="ico">💼</div><div><div class="niv">Bac + 2 · tertiaire</div><h2>BTS Gestion de la PME</h2></div></div>
+        <p>Synthèse de documents, éco-droit, gestion financière, dossier professionnel. Les six épreuves décortiquées une par une.</p>
+        <div class="foot"><div class="nb">79 <span>vidéos</span></div><div class="go">1re &amp; 2e année</div></div>
+      </div>
+    </a>
+
+    <a class="tile" href="https://hassanijacques-boop.github.io/reseaux-tube/" style="--c:var(--res)">
+      <div class="band"></div>
+      <div class="in">
+        <div class="head"><div class="ico">🖧</div><div><div class="niv">Bac + 2 · technique</div><h2>Réseaux &amp; sécurité</h2></div></div>
+        <p>OSI, VLAN, Active Directory, Linux, pare-feu, supervision. Les quatre blocs du métier et les certifications qui comptent.</p>
+        <div class="foot"><div class="nb">141 <span>vidéos</span></div><div class="go">TSRS</div></div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="note">
+    <b>Pourquoi ces sites existent.</b>
+    <p>Parce qu'une recherche « réviser les fractions » renvoie trente vidéos dont trois bonnes, mélangées à des Shorts et à des titres putaclic. Ici, quelqu'un a fait le tri à la main : chaque vidéo répond à un point précis du programme, et chaque lien a été testé. La progression se garde sur l'appareil, sans compte, sans cookie, sans publicité.</p>
+  </div>
+</main>
+
+<footer>
+  Les Tube — bibliothèques de vidéos pour réviser, du CP au BTS. Les vidéos restent la propriété de leurs auteurs.<br>
+  Aucune donnée n'est collectée · Progression enregistrée uniquement sur l'appareil · Version 1 — 8 novembre 2026.
+</footer>
+
+</body>
+</html>
